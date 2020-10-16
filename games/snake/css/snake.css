@@ -1,0 +1,92 @@
+* {
+   /* box-sizing: border-box; */
+}
+
+body {
+   margin: 0;
+   background-color: black;
+   color: red;
+}
+
+header,
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.controls {
+   display: flex;
+}
+
+.hidden {
+   display: none;
+}
+
+.grid {
+   width: 400px;
+   height: 400px;
+   border: 3px solid #500000;
+   border-radius: 7px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.square {
+   width: 20px;
+   height: 20px;
+   background-color: #090909;
+}
+
+.block {
+   border-color: #500000;
+   background-color: #cecece;
+}
+
+.apple {
+   background-color: #0ECC0C;
+}
+
+.snake {
+   box-sizing: border-box;
+   background-color: #fff;
+}
+
+
+
+.crash {
+   background-color: #FF0006;
+}
+
+.snake-head-top {
+   border-top: 4px solid red;
+   border-left: 2px solid red;
+   border-right: 2px solid red;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.snake-head-right {
+   border-top: 2px solid red;
+   border-bottom: 2px solid red;
+   border-right: 4px solid red;
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+}
+
+.snake-head-bottom {
+   border-left: 2px solid red;
+   border-bottom: 4px solid red;
+   border-right: 2px solid red;
+   border-bottom-right-radius: 10px;
+   border-bottom-left-radius: 10px;
+}
+
+.snake-head-left {
+   border-top: 2px solid red;
+   border-bottom: 2px solid red;
+   border-left: 4px solid red;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+}
