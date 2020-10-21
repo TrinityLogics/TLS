@@ -5,9 +5,9 @@ body {
 }
 
 .container {
-   width: 375px;
-   height: 667px;
+   width: 740px;
+   height: 1324px;
    background-color: white;
-   margin: 0 auto;
+   margin: 5px auto;
    text-align: center;
 }
