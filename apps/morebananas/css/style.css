@@ -5,8 +5,8 @@ body {
 }
 
 .container {
-   width: 818px;
-   height: 1462px;
+   width: 100vw;
+   height: 100vh;
    background-color: white;
    margin: 5px auto;
    text-align: center;
