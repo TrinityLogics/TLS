@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="36.851032"
-   height="31.999998"
-   viewBox="0 0 36.851032 31.999998"
+   width="3403.3518"
+   height="2106.9863"
+   viewBox="0 0 3403.3519 2106.9863"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-   sodipodi:docname="favicon-32x32.svg"
+   sodipodi:docname="icon.svg"
    inkscape:export-filename="/Users/ericcorbett/Documents/TrinityLogics/Logos/logo-stacked.svg.png"
    inkscape:export-xdpi="0.75"
    inkscape:export-ydpi="0.75">
@@ -96,9 +96,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="-3.7250807"
-     inkscape:cy="16.371382"
+     inkscape:zoom="0.125"
+     inkscape:cx="1359.5276"
+     inkscape:cy="2974.7705"
      inkscape:document-units="px"
      inkscape:current-layer="g1385"
      inkscape:document-rotation="0"
@@ -112,10 +112,10 @@
      inkscape:window-x="15"
      inkscape:window-y="791"
      inkscape:window-maximized="0"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
+     fit-margin-top="160"
+     fit-margin-left="100"
+     fit-margin-right="100"
+     fit-margin-bottom="160"
      inkscape:snap-global="false" />
   <metadata
      id="metadata5">
@@ -133,7 +133,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-4191.817,2591.9102)">
+     transform="translate(-333.26077,2751.9102)">
     <g
        id="g920"
        transform="translate(-221.5,299.0979)">
@@ -164,28 +164,6 @@
                id="path1375"
                sodipodi:nodetypes="ccccc" />
           </g>
-          <g
-             id="g2296"
-             transform="matrix(0.03522258,0,0,0.03522258,1675.4578,-280.28756)">
-            <g
-               id="g2301">
-              <path
-                 style="fill:#094393;fill-opacity:1;stroke:#094393;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                 d="M 593.78346,-114.59648 329.5,169.56352 593.78346,-289.27113 706.6326,81.6895 Z"
-                 id="path2290"
-                 sodipodi:nodetypes="ccccc" />
-              <path
-                 style="fill:#15abec;fill-opacity:1;stroke:#15abec;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                 d="M 480.01969,81.6895 858.6452,169.56352 H 329.5 l 264.28346,-284.16 z"
-                 id="path2292"
-                 sodipodi:nodetypes="ccccc" />
-              <path
-                 style="fill:#0d78c6;fill-opacity:1;stroke:#0d78c6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter892)"
-                 d="M 706.6326,81.6895 593.78346,-289.27113 858.6452,169.56352 480.01969,81.6895 Z"
-                 id="path2294"
-                 sodipodi:nodetypes="ccccc" />
-            </g>
-          </g>
         </g>
         <text
            xml:space="preserve"
@@ -207,7 +185,7 @@
                id="tspan890">Logics</tspan></tspan></text>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2125.21px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#646464;fill-opacity:1;stroke:none;stroke-width:159.566"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2125.21000000000003638px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#646464;fill-opacity:1;stroke:none;stroke-width:159.566;"
            x="22965.143"
            y="-13276.184"
            id="text902"

@@ -1,0 +1,152 @@
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(56, 10px);
+    grid-template-rows: repeat(62, 10px);
+    background-color: #000;
+}
+
+.top-wall {
+   border-top: 2px solid blue;
+}
+
+.right-wall {
+   border-right: 2px solid blue;
+}
+
+.bottom-wall {
+   border-bottom: 2px solid blue;
+}
+
+.left-wall {
+   border-left: 2px solid blue;
+}
+
+.top-right-corner {
+   border-top-right-radius: 11px;
+}
+
+.top-right-inside-corner {
+   border-top-right-radius: 7px;
+}
+
+.bottom-right-corner {
+   border-bottom-right-radius:11px;
+}
+
+.bottom-right-inside-corner {
+   border-bottom-right-radius: 7px;
+}
+
+.bottom-left-corner {
+   border-bottom-left-radius: 11px;
+}
+
+.bottom-left-inside-corner {
+   border-bottom-left-radius: 7px;
+}
+
+.top-left-corner {
+   border-top-left-radius:11px;
+}
+
+.top-left-inside-corner {
+   border-top-left-radius: 7px;
+}
+
+.box {
+   border-top: 2px solid blue;
+   border-right: 2px solid blue;
+   border-bottom: 2px solid blue;
+   border-left: 2px solid blue;
+   border-top-right-radius: 11px;
+   border-bottom-right-radius: 11px;
+   border-bottom-left-radius: 11px;
+   border-top-left-radius: 11px;
+}
+
+.rounded {
+   border-top-right-radius: 11px;
+   border-bottom-right-radius: 11px;
+   border-bottom-left-radius: 11px;
+   border-top-left-radius: 11px;
+}
+
+.top-right-margin {
+   margin-top: -2px;
+   margin-right: -2px;
+}
+
+.bottom-right-margin {
+   margin-right: -2px;
+   margin-bottom: -2px;
+}
+
+.bottom-left-margin {
+   margin-bottom: -2px;
+   margin-left: -2px;
+}
+
+.top-left-margin {
+   margin-top: -2px;
+   margin-left: -2px;
+}
+
+.top-margin {
+   margin-top: -2px;
+}
+.bottom-margin {
+   margin-bottom: -2px;
+}
+
+.ghost-exit {
+   box-sizing: border-box;
+   background-color: white;
+   margin: 3px 0;
+   border-radius: 3px;
+
+}
+
+.pellet {
+   box-sizing: border-box;
+   border-radius: 13px;
+   border: 7px solid #000;
+   background-color: white;
+}
+
+.booster {
+   box-sizing: border-box;
+   border-radius: 13px;
+   border: 1px solid black;
+   background-color: white;
+}
+
+.token {
+   display: flex;
+   justify-content: center;
+   box-sizing: border-box;
+}
+
+.chompee {
+   align-self: center;
+   box-sizing: border-box;
+   background-color: yellow;
+   width: 80%;
+   height: 80%;
+   border-radius: 20px;
+}
+
+.ghost {
+   align-self: center;
+   box-sizing: border-box;
+   width: 80%;
+   height: 80%;
+   border-top-right-radius: 20px;
+   border-top-left-radius: 20px;
+}
