@@ -1,0 +1,122 @@
+html {
+   background: url("../images/7ab48dab.jpg") no-repeat center center fixed;
+   background-size: cover;
+   background-color: rgba(76, 160, 249, 0.75);
+   background-blend-mode: screen;
+   font-size: 36px;
+}
+
+body {
+   margin: 0;
+   font-family: serif;
+   height: 100vh;
+   position: relative;
+}
+
+h1 {
+   color: #002e63;
+}
+
+img {
+   display: block;
+   max-width: 60vh;
+}
+
+a {
+   color: #00304E;
+   text-decoration: none;
+}
+
+a:visited {
+   color: #00304E;
+}
+
+a:hover {
+   cursor: pointer;
+   color: purple;
+}
+
+.section-center {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: flex-start;
+   height: 100vh;
+   margin: 0 auto;
+}
+
+.section {
+   margin: 2em 0;
+}
+
+.vacation-img {
+   display: none;
+}
+
+.vacation-info > * + * {}
+
+.dates * {
+   margin: 0;
+}
+
+.dates > * + * {
+   margin-top: 0.5em;
+}
+
+.timer {
+   display: flex;
+   justify-content: center;
+   text-align: center;
+}
+
+.timer > * + * {
+   margin-left: 20px;
+}
+
+.timer-format {
+   background: #006882;
+   background-image: linear-gradient(rgba(0, 68, 82, 0.3),rgba(0, 0, 0, 0.5)),
+      url("../images/splashing-waves-aerial-view-over-deep-blue-sea-water-natural-phenomenon-motion-surface-science-k-165699503.jpg");
+   background-size: cover;
+   color: #dedede;
+   border-radius: 7px;
+   padding: 1em 1.375em;
+}
+
+.number {
+   font-family: 'Merriweather', serif;
+   font-size: 2rem;
+   margin: 0;
+}
+
+.label {
+}
+
+footer {
+   position: fixed;
+   display: block;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+   padding: 0 25px;
+}
+
+@media (min-width: 1024px) {
+   html {
+      font-size: 18px;
+   }
+
+   .section-center {
+      max-width: 1200px;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+
+   }
+   .description {
+      padding: 0 25px;
+   }
+   .vacation-img {
+      display: block;
+   }
+}
