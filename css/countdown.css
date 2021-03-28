@@ -1,7 +1,7 @@
 html {
    background: rgba(76, 160, 249, 0.9);
-   background: linear-gradient(rgba(19, 40, 115, 0.25),
-                                    rgba(19, 40, 115, 0.25)),
+   background: linear-gradient(rgba(76, 160, 249, 0.6),
+                                    rgba(76, 160, 249, 0.6)),
                      url("../images/stairs_to_the_beach.jpg") no-repeat center center fixed;
    background-size: cover;
    /* background-blend-mode: screen; */
@@ -25,17 +25,17 @@ img {
 }
 
 a {
-   color: #659DBE;
+   color: #C1D7E4;
    text-decoration: none;
 }
 
 a:visited {
-   color: #659DBE;
+   color: #C1D7E4;
 }
 
 a:hover {
    cursor: pointer;
-   color: #2A414E;
+   color: #345162;
 }
 
 .section-center {
