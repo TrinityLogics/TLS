@@ -37,7 +37,7 @@ function twoDigitFormat(num) {
 }
 
 let startDate = new Date(2021,5,18,0,0,0);
-let endDate = new Date(2021,5,26,0,0,0);
+let endDate = new Date(2022,6,23,0,0,0);
 
 const startYear = startDate.getFullYear();
 const startMonth = months[startDate.getMonth()];
