@@ -1,22 +1,24 @@
 'use strict'; 
 const e = React.createElement; 
-class myButton extends React.Component { 
+class TimerDisplay extends React.Component { 
   constructor(props) { 
     super(props); 
-    this.state = { isliked: false }; 
+    this.state = { complete: false }; 
   } 
  
   render() { 
-    if (this.state.isliked) { 
+    if (this.state.complete) { 
       return 'Yes I Really Like This.'; 
     } 
  
     return e( 
       'button', 
-      { onClick: () => this.setState({ isliked: true }) }, 
+      { onClick: () => this.setState({ complete: true }) }, 
       'Like Button' 
     ); 
   } 
-} 
-const domContainer = document.querySelector('#timer'); 
-ReactDOM.render(e(myButton), domContainer);
+}
+
+const domContainer = document.querySelector('#react-timers');
+const root = ReactDOM.createRoot(domContainer)
+root.render(e(TimerDisplay));

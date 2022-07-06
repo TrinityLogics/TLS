@@ -31,9 +31,13 @@ const weekdays = [
    "Friday",
    "Saturday"
 ]
-// let startDate = new Date(toDateElement.dataset.date);
 
 let timerArray = [];
+
+function timerId() {
+   const today = new Date()
+   return today.getTime()
+}
 
 function twoDigitFormat(num) {
    if (num < 10) {
@@ -42,38 +46,20 @@ function twoDigitFormat(num) {
    return num;
 }
 
-// let startDate = new Date(2021,5,18,0,0,0);
-let endDate = new Date(2021,5,26,0,0,0);
-
-// const startYear = startDate.getFullYear();
-// const startMonth = months[startDate.getMonth()];
-// const startDay = startDate.getDate();
-// const startWeekday = weekdays[startDate.getDay()];
-// let hours = twoDigitFormat(startDate.getHours());
-// let minutes = twoDigitFormat(startDate.getMinutes());
-// let seconds = twoDigitFormat(startDate.getSeconds());
-// let meridian = 'am'
-// startDateDisplay.textContent = `${startWeekday}, ${startMonth} ${startDay}, ${startYear}`;
-// if (hours > 12) {
-//    meridian = 'pm';
-//    hours -= 12;
-// }
-// time.textContent = `${hours}:${minutes}${meridian}
-const endWeekday = weekdays[endDate.getDay()];
-const endMonth = months[endDate.getMonth()];
-const endDay = endDate.getDate();
-const endYear = endDate.getFullYear();
-// endDateDisplay.textContent = `${endWeekday}, ${endMonth} ${endDay}, ${endYear}`;
-
-// const futureTime = startDate.getTime();
-
 function loadTimers() {
-   timerArray = JSON.parse(window.localStorage.getItem('timerList'));
-   if (!timerArray) { timerArray = [] };
-   timerArray.forEach(item => {
-      const timerId = camelCase(item.title)
-      addTimer(timerId, item.title, item.date);
-   })
+   document.querySelector('.timers').innerHTML = ''
+   timerArray = JSON.parse(window.localStorage.getItem('timerList')) || [];
+   if (timerArray.length < 1) { showTimerInput() };
+   if (Array.isArray(timerArray)) {
+      timerArray.forEach(timer => {
+         displayTimer(timer);
+      })
+      runCountdown()
+   }
+}
+
+function saveTimers() {
+   window.localStorage.setItem('timerList',JSON.stringify(timerArray));
 }
 
 function getTimeTo(toDateTime) {
@@ -81,15 +67,12 @@ function getTimeTo(toDateTime) {
    toDateTime = new Date(toDateTime);
 
    const t = toDateTime - today;
-   if ( t < 0 ) { return [0,0,0,0] };
-   // 1s = 1000ms
-   // 1m = 60s
-   // 1h = 60m
-   // 1d = 24h
-   const oneMinute = 60 * 1000;
-   const oneHour = 60 * oneMinute;
-   const oneDay = 24 * oneHour;
-   let daysRem = t / oneDay;
+   if ( t < 0 ) { return 0 };
+  
+   const oneMinute = 60 * 1000; // 1s = 1000ms
+   const oneHour = 60 * oneMinute; // 1m = 60s
+   const oneDay = 24 * oneHour; // 1h = 60m
+   let daysRem = t / oneDay; // 1d = 24h
    daysRem = Math.floor(daysRem);
    let hoursRem = Math.floor((t % oneDay) / oneHour);
    let minutesRem = Math.floor((t % oneHour) / oneMinute);
@@ -108,36 +91,41 @@ function camelCase(str) {
        });
 }
 
+function showTimerInput() {
+   newTimerInput.classList.remove('hidden');
+}
+
 function clearTimerInput() {
    newTimerInput.classList.add('hidden');
    document.getElementById('newTimerTitle').value = '';
    document.getElementById('newTimerDate').value = '';
 }
 
-function saveTimer(newTitle, newDate) {
+function createTimer(title, date) {
    var newTimerObject = {
-      "title": newTitle,
-      "date": newDate
+      "id": timerId(),
+      "title": title,
+      "date": date
       };
    timerArray.push(newTimerObject);
-   window.localStorage.setItem('timerList',JSON.stringify(timerArray));
+   saveTimers()
 }
 
-function addTimer(timerId, newTitle, time2Date) {
+function displayTimer(timer) {
    var newTimerObj = document.createElement('div');
    newTimerObj.classList.add('timer', 'card');
-   newTimerObj.id = timerId;
+   const deleteButton = `<button class="delete" type="button" onClick="deleteTimer('${timer.id}')">X</button>`
 
    var timerObj = [  `<div class="timer-title">`,
-                        `<h2>${newTitle}</h2>`,
+                        `<h2>${timer.title}</h2>`,
                      `</div>`,
                      `<div class="timer-date">`,
-                        `<h4>${time2Date}</h4>`,
+                        `<h4>${timer.date}</h4>`,
                      `</div>`,
                      `<div class='controls'>`,
-                        `<button class="delete" type="button" id="remove">X</button>`,
+                        deleteButton,
                      `</div>`,
-                     `<div class="timer-time">`,
+                     `<div id=${timer.id} class="timer-time">`,
                         `<div class="time time-days">`,
                            `<p class="value"></p>`,
                            `<p class="label">days</p>`,
@@ -157,30 +145,33 @@ function addTimer(timerId, newTitle, time2Date) {
                      `</div>` ].join('\n');
    newTimerObj.innerHTML = timerObj;
    document.querySelector('.timers').appendChild(newTimerObj);
-   startTimer(timerId, time2Date);
-   timerIntervalArray.push(timerId);
 }
 
-function startTimer(timerId, newDate) {
-   const timeToArray = getTimeTo(newDate);
-   const timerDisplay = document.querySelectorAll(`#${timerId} .value`);
-   timerDisplay.forEach(function(item,index) {
-      item.innerHTML = twoDigitFormat(timeToArray[index]);
-   });
-   if (timeToArray == [0,0,0,0]) {
+function runCountdown() {
+   timerArray.forEach(timer => {
+      const timeRemaining = getTimeTo(timer.date)
+      const timeDisplay = document.getElementById(timer.id).querySelectorAll('.value');
+      timeDisplay.forEach((item, index) => {
+         item.innerHTML = twoDigitFormat(timeRemaining[index])
+      })
+   })
+   setTimeout(runCountdown, 1000)
+}
 
-   } else {
-      setTimeout(function() {startTimer(timerId, newDate), 1000});
-   }
+function deleteTimer(id) {
+   timerArray = timerArray.filter(time => time.id != id)
+   saveTimers()
+   loadTimers()
 }
 
 newTimerButton.addEventListener('click', function() {
-   newTimerInput.classList.remove('hidden');
+   showTimerInput()
 })
 
 clearAllTimersButton.addEventListener('click', function() {
-   window.localStorage.clear();
-   location.reload(true);
+   timerArray = []
+   saveTimers()
+   loadTimers()
 })
 
 newTimerCancel.addEventListener('click', function() {
@@ -188,15 +179,12 @@ newTimerCancel.addEventListener('click', function() {
 })
 
 newTimerAdd.addEventListener('click', function() {
-   const newTitle = document.getElementById('newTimerTitle').value;
-   // const timerId = newTitle.split(' ').join('');
-   const timerId = camelCase(newTitle);
-   var newDate = document.getElementById('newTimerDate').value;
-   newDate = `${newDate.slice(5,7)}/${newDate.slice(8,10)}/${newDate.slice(0,4)}`;
-   saveTimer(newTitle,newDate);
-   addTimer(timerId, newTitle, newDate);
+   const title = document.getElementById('newTimerTitle').value;
+   var date = document.getElementById('newTimerDate').value;
+   date = `${date.slice(5,7)}/${date.slice(8,10)}/${date.slice(0,4)}`;
+   createTimer(title,date);
+   loadTimers();
    clearTimerInput()
 })
 
-// var countdown = setInterval(getRemainingTime,1000);
 loadTimers()
