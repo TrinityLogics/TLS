@@ -1,0 +1,102 @@
+ /* tuscany 23 63 45 */
+
+html {
+   background: hsl(0, 0%, 100%);
+   font-size: 1em;
+}
+
+body {
+   margin: 0;
+   font-family: serif;
+   height: 100vh;
+   color: hsla(0, 0%, 0%, 1);
+}
+
+img {
+   display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+   text-align: center;
+   margin: 0;
+}
+
+h1 {
+   font-size: 2rem;
+}
+
+a {
+   color: #C1D7E4;
+}
+
+a:visited {
+   color: #C1D7E4;
+}
+
+a:hover {
+   cursor: pointer;
+   color: #345162;
+}
+
+header {
+   background-color: hsl(0, 0%, 0%);
+   color: hsl(0, 100%, 39%);
+   display: flex;
+   align-items: center;
+   padding: 20px;
+}
+
+.logo {
+   margin-right: auto;
+}
+
+.new-timer-btn {
+   margin-left: auto;
+}
+
+.hidden {
+   display: none;
+}
+
+.timers {
+   display: flex;
+   justify-content: center;
+   margin-top: 1em;
+}
+
+.card {
+   position: relative;
+   background-color: #236345;
+   color:hsl(0, 0%, 90%);
+   padding: 1.2em 1.5em;
+   border-radius: 0.4em;
+}
+
+.controls {
+   position: absolute;
+   right: 0;
+   top: 0;
+   transform: translate(30%, -30%);
+}
+
+.delete {
+   background-color: red;
+   border: none;
+   border-radius: 50%;
+   text-decoration: none;
+   width: 25px;
+   height: 25px;
+   color:hsl(0, 0%, 90%);
+}
+
+.timer-time {
+   display: flex;
+   justify-content: center;
+   gap: 1em;
+   text-align: center;
+   margin-top: 1em;
+}
+
+.value {
+   font-size: 1.5em;
+}

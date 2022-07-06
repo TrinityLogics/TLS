@@ -125,7 +125,7 @@ function saveTimer(newTitle, newDate) {
 
 function addTimer(timerId, newTitle, time2Date) {
    var newTimerObj = document.createElement('div');
-   newTimerObj.classList.add('timer-2');
+   newTimerObj.classList.add('timer', 'card');
    newTimerObj.id = timerId;
 
    var timerObj = [  `<div class="timer-title">`,
@@ -134,7 +134,7 @@ function addTimer(timerId, newTitle, time2Date) {
                      `<div class="timer-date">`,
                         `<h4>${time2Date}</h4>`,
                      `</div>`,
-                     `<div>`,
+                     `<div class='controls'>`,
                         `<button class="delete" type="button" id="remove">X</button>`,
                      `</div>`,
                      `<div class="timer-time">`,
